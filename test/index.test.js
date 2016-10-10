@@ -33,13 +33,13 @@ describe('engine', () => {
 
   describe('#save', () => {
     context('when the request go well', () => {
-      it('should save sending a post to the post url with the store', () => {
+      it('should save sending a put to the put url with the store', () => {
         nock('http://test.localhost', {
           reqheaders: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-        }).post('/some/pretty/url', JSON.stringify({ store: { test: 'store' } }))
+        }).put('/some/pretty/url', JSON.stringify({ store: { test: 'store' } }))
         .reply(200, { some: 'potato' });
 
         const engine = createEngine('http://test.localhost/some/pretty/url', 'http://test.localhost/some/pretty/url');
@@ -54,7 +54,7 @@ describe('engine', () => {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-        }).post('/some/other/pretty/url', JSON.stringify({ store: { test: 'store' } }))
+        }).put('/some/other/pretty/url', JSON.stringify({ store: { test: 'store' } }))
         .reply(500);
 
         const engine = createEngine('http://test.localhost/some/other/pretty/url', 'http://test.localhost/some/other/pretty/url');
