@@ -42,15 +42,20 @@ build-watch: clean install
 
 lint: install
 	echo "> Linting ..."
-	$(BIN)/eslint src/
+	$(BIN)/gulp lint
+
+lint-watch: install
+	echo "> Linting ..."
+	$(BIN)/gulp lint:watch
 
 test: install
 	echo "> Testing ..."
-  $(BIN)/mocha --compilers js:babel-register --recursive
+	$(BIN)/mocha test/ --compilers js:babel-register --recursive
 
 test-watch: install
 	echo "> Testing forever ..."
-  $(BIN)/mocha --compilers js:babel-register --recursive --watch
+	$(BIN)/mocha test/ --compilers js:babel-register --recursive --watch
+
 
 #
 # MAKEFILE
