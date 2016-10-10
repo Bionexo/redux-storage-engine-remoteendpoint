@@ -15,7 +15,7 @@ describe('engine', () => {
           .reply(200, { store: { test: 'store' } });
 
         const engine = createEngine('http://test.localhost/some/url.json', 'whatever');
-        return expect(engine.load()).to.eventually.eql({ store: { test: 'store' } });
+        return expect(engine.load()).to.eventually.eql({ test: 'store' });
       });
     });
 

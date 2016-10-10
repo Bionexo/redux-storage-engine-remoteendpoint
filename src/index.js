@@ -17,6 +17,7 @@ export default (getUrl, setUrl, options) => ({
     return fetch(getUrl, options)
       .then(checkStatus)
       .then(response => response.json())
+      .then(json => json.store)
       .catch(error => Promise.reject(error.message));
   },
 
