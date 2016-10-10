@@ -15,13 +15,14 @@
     "redux",
     "redux-storage",
     "redux-storage-engine",
-    "remoteEndpoint"
+    "remote",
+    "remoteendpoint"
   ],
   "author": "Gabriel Lett Viviani <glett@bionexo.com>",
   "files": [
     "build/",
     "src",
-    "!**/test/**"
+    "!test/**"
   ],
   "license": "MIT",
   "dependencies": {
