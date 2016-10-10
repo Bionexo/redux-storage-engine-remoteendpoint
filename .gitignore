@@ -1,0 +1,7 @@
+# build artifacts
+/build/
+
+# npm
+/node_modules/
+/npm-debug.log
+

@@ -1,0 +1,42 @@
+{
+  "name": "redux-storage-engine-remoteendpoint",
+  "version": "0.0.0",
+  "description": "A remote endpoint storege engine for redux-storage",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "make lint test build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bionexo/redux-storage-engine-remoteendpoint.git"
+  },
+  "homepage": "https://github.com/bionexo/redux-storage-engine-remoteendpoint",
+  "keywords": [
+    "redux",
+    "redux-storage",
+    "redux-storage-engine",
+    "remoteEndpoint"
+  ],
+  "author": "Gabriel Lett Viviani <glett@bionexo.com>",
+  "files": [
+    "build/",
+    "src",
+    "!**/tests/**"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.4.0",
+    "babel-core": "^6.4.0",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-3": "^6.5.0",
+    "eslint": "^1.10.3",
+    "eslint-config-michaelcontento": "^1.1.1",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-plugin-mocha-only": "0.0.3",
+    "jsdom": "^9.5.0",
+    "mocha": "^3.0.2",
+    "mocha-jsdom": "^1.1.0",
+    "nock": "^8.0.0"
+  }
+}
