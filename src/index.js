@@ -12,7 +12,7 @@ const checkStatus = (response) => {
 };
 
 
-export default (getUrl, setUrl, options) => ({
+export default (getUrl, setUrl, options = {}) => ({
   load() {
     return fetch(getUrl, options)
       .then(checkStatus)
@@ -27,6 +27,7 @@ export default (getUrl, setUrl, options) => ({
       method: 'POST',
       body: JSON.stringify({ store }),
       headers: {
+        ...options.headers,
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
