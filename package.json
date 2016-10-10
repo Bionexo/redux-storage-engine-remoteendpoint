@@ -1,6 +1,6 @@
 {
   "name": "redux-storage-engine-remoteendpoint",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A remote endpoint storege engine for redux-storage",
   "main": "build/index.js",
   "scripts": {
