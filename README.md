@@ -5,7 +5,7 @@
 [![npm version](https://img.shields.io/npm/v/redux-storage-engine-remoteendpoint.svg?style=flat-square)](https://www.npmjs.com/package/redux-storage-engine-remoteendpoint)
 [![npm downloads](https://img.shields.io/npm/dm/redux-storage-engine-remoteendpoint.svg?style=flat-square)](https://www.npmjs.com/package/redux-storage-engine-remoteendpoint)
 
-A remote endpoint storege engine for [redux-storage](https://github.com/michaelcontento/redux-storage).
+A remote endpoint storage engine for [redux-storage](https://github.com/michaelcontento/redux-storage).
 
 # Usage
 
