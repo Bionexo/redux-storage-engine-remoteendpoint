@@ -23,8 +23,8 @@ export default (getUrl, setUrl, options = {}) => ({
 
   save(store) {
     const saveOptions = {
+      method: 'PUT',
       ...options,
-      method: 'POST',
       body: JSON.stringify({ store }),
       headers: {
         ...options.headers,
