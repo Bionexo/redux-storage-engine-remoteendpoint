@@ -24,7 +24,7 @@ export default (getUrl, setUrl, options) => ({
     const saveOptions = {
       ...options,
       method: 'POST',
-      body: JSON.stringify(store),
+      body: JSON.stringify({ store }),
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

@@ -12,10 +12,10 @@ describe('engine', () => {
       it('should fetch store from remote', () => {
         nock('http://test.localhost')
           .get('/some/url.json')
-          .reply(200, { test: 'store' });
+          .reply(200, { store: { test: 'store' } });
 
         const engine = createEngine('http://test.localhost/some/url.json', 'whatever');
-        return expect(engine.load()).to.eventually.eql({ test: 'store' });
+        return expect(engine.load()).to.eventually.eql({ store: { test: 'store' } });
       });
     });
 
@@ -39,10 +39,10 @@ describe('engine', () => {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-        }).post('/some/other/url', JSON.stringify({ test: 'store' }))
+        }).post('/some/pretty/url', JSON.stringify({ store: { test: 'store' } }))
         .reply(200, { some: 'potato' });
 
-        const engine = createEngine('http://test.localhost:80/some/other/url', 'http://test.localhost:80/some/other/url');
+        const engine = createEngine('http://test.localhost/some/pretty/url', 'http://test.localhost/some/pretty/url');
         return expect(engine.save({ test: 'store' })).to.eventually.have.property('status').eq(200);
       });
     });
@@ -54,10 +54,10 @@ describe('engine', () => {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-        }).post('/some/other/url', JSON.stringify({ test: 'store' }))
+        }).post('/some/other/pretty/url', JSON.stringify({ store: { test: 'store' } }))
         .reply(500);
 
-        const engine = createEngine('http://test.localhost:80/some/other/url', 'http://test.localhost:80/some/other/url');
+        const engine = createEngine('http://test.localhost/some/other/pretty/url', 'http://test.localhost/some/other/pretty/url');
         return expect(engine.save({ test: 'store' })).to.eventually.be.rejectedWith('Internal Server Error');
       });
     });
